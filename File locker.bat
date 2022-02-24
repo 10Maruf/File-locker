@@ -4,7 +4,7 @@ title Folder Private
 if EXIST "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}" goto UNLOCK
 if NOT EXIST Private goto MDLOCKER
 :CONFIRM
-echo Are you sure you want to lock the folder(Y/N)
+echo Lock korte chan(Y/N)
 set/p "cho=>"
 if %cho%==Y goto LOCK
 if %cho%==y goto LOCK
@@ -18,15 +18,15 @@ attrib +h +s "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}"
 echo Folder locked
 goto End
 :UNLOCK
-echo Enter password to unlock folder
+echo Password janle den.
 set/p "pass=>"
-if NOT %pass%==fucku goto FAIL
+if NOT %pass%=="password here" goto FAIL
 attrib -h -s "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}"
 ren "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}" Private
 echo Folder Unlocked successfully
 goto End
 :FAIL
-echo Invalid password
+echo kire Hacker?
 goto end
 :MDLOCKER
 md Private
